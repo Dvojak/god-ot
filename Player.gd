@@ -12,6 +12,9 @@ func _ready():
 	astar_grid.cell_size = Vector2(16 ,16)
 	astar_grid.diagonal_mode = AStarGrid2D.DIAGONAL_MODE_NEVER
 	astar_grid.update()
+	
+	position = tile_map.map_to_local(tile_map.local_to_map(global_position))
+	
 
 func _input(event):
 	if event.is_action_pressed("move") == false:
